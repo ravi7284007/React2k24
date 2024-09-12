@@ -1,33 +1,26 @@
-import React from 'react';
-import ReactDOM  from 'react-dom/client';
-import pizzaData from './data';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Header from "./components/Header";
+import Pizza from "./components/Pizza";
+import Footer from "./components/Footer";
+import "./index.css";
 
-function App(){
-    return <Pizza/>
-}
-
-function Pizza(){
-    return(
-        <>
-        {
-            pizzaData.map(item => {
-                return <>
-                <img src={item.photoName} alt="" />
-                <h2>{item.name}  
-                <small>(${item.price})</small></h2>
-                <h3>{item.ingredients}</h3>
-                </>
-            })
-        }
-        </>
-    )
+function App() {
+  return (
+    <div className="container">
+      <Header />
+      <main>
+        <Pizza />
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
 // React v18
-const root = ReactDOM.createRoot(document.getElementById("root"))
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-<React.StrictMode>
-    <App/>
-</React.StrictMode>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
-
